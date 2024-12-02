@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "__MSG_extName__",
-  "short_name": "__MSG_extName__",
+  "name": "realsparkle",
+  "short_name": "realsparkle",
   "version": "0.0.1.4",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
