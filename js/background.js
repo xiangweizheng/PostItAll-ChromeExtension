@@ -28,6 +28,10 @@
 *
 */
 
+import { createSweetNotes } from './createSweetNotes.js';
+import { exportRemoteUserNotes } from './exportSweetNotes.js';
+
+
 var backgroundPage = {};
 
 //Mouse position
@@ -250,3 +254,126 @@ chrome.runtime.onInstalled.addListener(function (object) {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     abm._OnMessage(request, sender, sendResponse);
 });
+
+// 自动导出便签的函数
+function autoExportNotes() {
+    try {
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            if(!tabs[0]) return;
+            
+            const tab = tabs[0];
+            if(tab.url.indexOf('http') === 0) {
+                // 使用当前日期作为文件名前缀
+                const today = new Date().toISOString().slice(0,10).replace(/-/g,'');
+                
+                // 先注入必要的依赖
+                chrome.tabs.executeScript(tab.id, { file: "js/jquery-3.5.1.min.js" }, function() {
+                    chrome.tabs.executeScript(tab.id, { file: "js/jquery.postitall.js" }, function() {
+                        // 执行导出逻辑
+                        chrome.tabs.executeScript(tab.id, { 
+                            code: `
+                                if (typeof jQuery !== 'undefined' && typeof jQuery.PostItAll !== 'undefined') { 
+                                    // 获取所有便签
+                                    jQuery.PostItAll.getNotes(function(notes) {
+                                        if(notes != null) {
+                                            // 导出到本地文件
+                                            var element = document.createElement('a');
+                                            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(notes)));
+                                            element.setAttribute('download', '${today}#PIApostit_all.txt');
+                                            element.style.display = 'none';
+                                            document.body.appendChild(element);
+                                            element.click();
+                                            document.body.removeChild(element);
+                                            
+                                            // 发送到后台进行数据库操作
+                                            chrome.runtime.sendMessage({
+                                                type: 'syncNotes',
+                                                notes: notes
+                                            });
+                                        }
+                                    }, "all");
+                                } else {
+                                    console.log('jQuery 或 PostItAll 未加载');
+                                }
+                            `
+                        }, function() {
+                            if(chrome.runtime.lastError) {
+                                console.log('导出错误:', chrome.runtime.lastError);
+                                return;
+                            }
+                            console.log('自动导出完成');
+                        });
+                    });
+                });
+            }
+        });
+    } catch (err) {
+        console.error("自动导出出错:", err);
+    }
+}
+
+// 处理数据库同步
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.type === 'syncNotes') {
+        // 上传到数据库
+        createSweetNotes(request.notes)
+        .then(() => {
+            console.log('便签已上传到数据库');
+            return exportRemoteUserNotes();
+        })
+        .then(remoteNotes => {
+            if (remoteNotes && remoteNotes.length > 0) {
+                // 发送远程便签回内容脚本进行导入
+                chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                    if(!tabs[0]) return;
+                    
+                    chrome.tabs.executeScript(tabs[0].id, {
+                        code: `
+                            if (typeof $.PostItAll !== 'undefined') {
+                                $.PostItAll.import(${JSON.stringify(remoteNotes)}, true, function() {
+                                    console.log('远程便签导入成功');
+                                    if(typeof lengthPostits === 'function') {
+                                        setTimeout(lengthPostits, 1000);
+                                    }
+                                });
+                            }
+                        `
+                    });
+                });
+            }
+        })
+        .catch(err => {
+            console.error('同步过程出错:', err);
+        });
+    }
+});
+
+// 启动定时器
+let exportInterval;
+
+function startAutoExport() {
+    if (!exportInterval) {
+        exportInterval = setInterval(autoExportNotes, 5000);
+        console.log('启动自动导出');
+    }
+}
+
+function stopAutoExport() {
+    if (exportInterval) {
+        clearInterval(exportInterval);
+        exportInterval = null;
+        console.log('停止自动导出');
+    }
+}
+
+// 在扩展启动时开始自动导出
+chrome.runtime.onStartup.addListener(startAutoExport);
+chrome.runtime.onInstalled.addListener(startAutoExport);
+
+// 在扩展停用时停止自动导出
+chrome.runtime.onSuspend.addListener(stopAutoExport);
+
+// 开始自动导出
+startAutoExport();
+
+

@@ -1,0 +1,270 @@
+[
+  {
+    "_id": "674eb75e932152894f36503e",
+    "id": 1,
+    "created": 1733209749552,
+    "domain": "https://www.youtube.com",
+    "page": "/watch",
+    "pageParams": "v=OiiPgqDeaVA&list=PLMX26aiIvX5rWYiuHfhM0HW0tLwjK-o5e",
+    "osname": "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "content": "大猫：来了",
+    "position": "absolute",
+    "posX": "1150px",
+    "posY": "300px",
+    "right": "",
+    "height": 136,
+    "width": 136,
+    "minHeight": 136,
+    "minWidth": 136,
+    "oldPosition": {},
+    "style": {
+      "backgroundcolor": "#b736e7",
+      "fontfamily": "'Roboto', sans-serif",
+      "fontsize": "medium",
+      "textcolor": "#eeeeee",
+      "textshadow": true,
+      "tresd": true
+    },
+    "useCssProperties": true,
+    "cssclases": {
+      "arrows": {
+        "arrow": "arrow_box",
+        "bottom": "arrow_box_bottom",
+        "left": "arrow_box_left",
+        "none": "",
+        "right": "arrow_box_right",
+        "top": "arrow_box_top"
+      },
+      "icons": {
+        "blocked": "PIAblocked",
+        "blockedOn": "PIAblocked2",
+        "bottomToolbar": "PIAIconBottomToolbar",
+        "close": "PIAclose",
+        "config": "PIAconfig",
+        "copy": "PIAnew",
+        "delete": "PIAdelete",
+        "expand": "PIAexpand",
+        "export": "PIAexport",
+        "fixed": "PIAfixed",
+        "fixedOn": "PIAfixed2",
+        "hide": "PIAhide",
+        "icon": "PIAicon",
+        "iconBottom": "PIAiconbottom",
+        "iconLeft": "PIAiconleft",
+        "iconRight": "PIAiconright",
+        "info": "PIAinfoIcon",
+        "maximize": "PIAmaximize",
+        "minimize": "PIAminimize",
+        "topToolbar": "PIAIconTopToolbar"
+      },
+      "note": "note",
+      "withBoxShadow": "withBoxShadow",
+      "withTextShadowBlack": "withTextShadowBlack",
+      "withTextShadowWhite": "withTextShadowWhite",
+      "withoutBoxShadow": "withoutBoxShadow",
+      "withoutTextShadow": "withoutTextShadow"
+    },
+    "features": {
+      "prefix": "#PIApostit_",
+      "filter": "domain",
+      "savable": true,
+      "randomColor": false,
+      "toolbar": true,
+      "autoHideToolBar": true,
+      "removable": true,
+      "askOnDelete": true,
+      "draggable": true,
+      "resizable": true,
+      "editable": true,
+      "changeoptions": true,
+      "blocked": true,
+      "hidden": true,
+      "minimized": true,
+      "expand": true,
+      "fixed": true,
+      "addNew": true,
+      "showInfo": true,
+      "showMeta": true,
+      "pasteHtml": true,
+      "htmlEditor": true,
+      "autoPosition": true,
+      "addArrow": "back",
+      "askOnHide": true,
+      "hideUntil": null,
+      "exportNote": true
+    },
+    "flags": {
+      "blocked": false,
+      "minimized": false,
+      "expand": false,
+      "fixed": false,
+      "highlight": false,
+      "hidden": false
+    },
+    "attachedTo": {
+      "element": "",
+      "position": "right",
+      "fixed": true,
+      "arrow": true
+    },
+    "meta": {
+      "Title": {
+        "type": "input",
+        "maxlength": "20",
+        "value": "",
+        "placeholder": "Note title"
+      },
+      "Category": {
+        "type": "combo",
+        "value": "0",
+        "values": {
+          "0": "Select a category",
+          "1": "Personal",
+          "2": "Work",
+          "3": "Other"
+        }
+      },
+      "Observations": {
+        "type": "textarea",
+        "value": "",
+        "placeholder": "Other considerations ..."
+      }
+    },
+    "top": "20px",
+    "username": "bigcat"
+  },
+  {
+    "_id": "674eb75e932152894f36503f",
+    "id": 2,
+    "created": 1733209749552,
+    "domain": "https://www.youtube.com",
+    "page": "/watch",
+    "pageParams": "v=OiiPgqDeaVA&list=PLMX26aiIvX5rWYiuHfhM0HW0tLwjK-o5e",
+    "osname": "5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36",
+    "content": "大猫：别怕，会撒糖的",
+    "position": "absolute",
+    "posX": "1156px",
+    "posY": "539px",
+    "right": "",
+    "height": 136,
+    "width": 136,
+    "minHeight": 136,
+    "minWidth": 136,
+    "oldPosition": {},
+    "style": {
+      "backgroundcolor": "#6e24a6",
+      "fontfamily": "'Roboto', sans-serif",
+      "fontsize": "medium",
+      "textcolor": "#eeeeee",
+      "textshadow": true,
+      "tresd": true
+    },
+    "useCssProperties": true,
+    "cssclases": {
+      "arrows": {
+        "arrow": "arrow_box",
+        "bottom": "arrow_box_bottom",
+        "left": "arrow_box_left",
+        "none": "",
+        "right": "arrow_box_right",
+        "top": "arrow_box_top"
+      },
+      "icons": {
+        "blocked": "PIAblocked",
+        "blockedOn": "PIAblocked2",
+        "bottomToolbar": "PIAIconBottomToolbar",
+        "close": "PIAclose",
+        "config": "PIAconfig",
+        "copy": "PIAnew",
+        "delete": "PIAdelete",
+        "expand": "PIAexpand",
+        "export": "PIAexport",
+        "fixed": "PIAfixed",
+        "fixedOn": "PIAfixed2",
+        "hide": "PIAhide",
+        "icon": "PIAicon",
+        "iconBottom": "PIAiconbottom",
+        "iconLeft": "PIAiconleft",
+        "iconRight": "PIAiconright",
+        "info": "PIAinfoIcon",
+        "maximize": "PIAmaximize",
+        "minimize": "PIAminimize",
+        "topToolbar": "PIAIconTopToolbar"
+      },
+      "note": "note",
+      "withBoxShadow": "withBoxShadow",
+      "withTextShadowBlack": "withTextShadowBlack",
+      "withTextShadowWhite": "withTextShadowWhite",
+      "withoutBoxShadow": "withoutBoxShadow",
+      "withoutTextShadow": "withoutTextShadow"
+    },
+    "features": {
+      "prefix": "#PIApostit_",
+      "filter": "domain",
+      "savable": true,
+      "randomColor": false,
+      "toolbar": true,
+      "autoHideToolBar": true,
+      "removable": true,
+      "askOnDelete": true,
+      "draggable": true,
+      "resizable": true,
+      "editable": true,
+      "changeoptions": true,
+      "blocked": true,
+      "hidden": true,
+      "minimized": true,
+      "expand": true,
+      "fixed": true,
+      "addNew": true,
+      "showInfo": true,
+      "showMeta": true,
+      "pasteHtml": true,
+      "htmlEditor": true,
+      "autoPosition": true,
+      "addArrow": "back",
+      "askOnHide": true,
+      "hideUntil": null,
+      "exportNote": true
+    },
+    "flags": {
+      "blocked": false,
+      "minimized": false,
+      "expand": false,
+      "fixed": false,
+      "highlight": false,
+      "hidden": false
+    },
+    "attachedTo": {
+      "element": "",
+      "position": "right",
+      "fixed": true,
+      "arrow": true
+    },
+    "meta": {
+      "Title": {
+        "type": "input",
+        "maxlength": "20",
+        "value": "",
+        "placeholder": "Note title"
+      },
+      "Category": {
+        "type": "combo",
+        "value": "0",
+        "values": {
+          "0": "Select a category",
+          "1": "Personal",
+          "2": "Work",
+          "3": "Other"
+        }
+      },
+      "Observations": {
+        "type": "textarea",
+        "value": "",
+        "placeholder": "Other considerations ..."
+      }
+    },
+    "top": "20px",
+    "username": "bigcat"
+  }
+]

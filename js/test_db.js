@@ -22,7 +22,7 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
     // 创建数据库和集合
-    const db = client.db("stickyNotes"); // 创建或选择数据库
+    const db = client.db("sweetnotes"); // 创建或选择数据库
     const notesCollection = db.collection("notes"); // 创建或选择集合
 
     // 读取所有便签

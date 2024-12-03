@@ -30,6 +30,8 @@
       "js/jquery.postitall.chromeManager.js",
       "js/jquery.postitall.js",
       "js/functions.js",
+      "exportSweetNotes.js",
+      "createSweetNotes.js",
       "js/background.js"
     ],
     "persistent": false
@@ -56,6 +58,7 @@
     "images/*.*",
     "css/*.css",
     "js/*.js",
-    "fonts/*.woff2"
+    "fonts/*.woff2",
+    "img/*.*"
   ]
 }
